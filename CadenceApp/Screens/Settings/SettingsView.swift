@@ -11,6 +11,7 @@ import UIKit
 struct SettingsView: View {
     @Environment(\.modelContext) private var context
     @Environment(ThemeManager.self) private var theme
+    @Environment(StoreController.self) private var store
     @Query private var profiles: [AthleteProfile]
     @Query private var adjustments: [PlanAdjustment]
     @State private var showResetPlanConfirm = false
@@ -40,6 +41,9 @@ struct SettingsView: View {
                     dataSection
                     disclaimerSection
                     aboutSection
+                    #if DEBUG
+                    demoSection
+                    #endif
                 }
                 .padding(20)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -130,6 +134,43 @@ struct SettingsView: View {
             .foregroundStyle(Theme.textSecondary)
             .monospacedDigit()
     }
+
+    // MARK: - Demo mode (DEBUG only)
+
+    #if DEBUG
+    /// Switches to a separate, seeded copy of the app for demos and filming.
+    /// Each change rebuilds the app tree, so the bindings re-read on the way back.
+    private var demoSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            section("Demo mode") {
+                row("Demo mode", first: true) {
+                    Toggle("", isOn: Binding(get: { store.isDemo }, set: { store.setDemo($0) }))
+                        .labelsHidden().tint(Theme.brand)
+                }
+                if store.isDemo {
+                    row("Today's verdict") {
+                        Picker("", selection: Binding(
+                            get: { DemoMode.todayVerdict },
+                            set: { DemoMode.todayVerdict = $0; store.rebuildDemo() })) {
+                            ForEach(Verdict.allCases, id: \.self) { Text($0.displayName).tag($0) }
+                        }
+                        .labelsHidden().pickerStyle(.menu).tint(Theme.brand)
+                    }
+                    row("Checked in today") {
+                        Toggle("", isOn: Binding(
+                            get: { DemoMode.todayCheckedIn },
+                            set: { DemoMode.todayCheckedIn = $0; store.rebuildDemo() }))
+                            .labelsHidden().tint(Theme.brand)
+                    }
+                    actionRow("Rebuild demo history") { store.rebuildDemo() }
+                }
+            }
+            footnote(store.isDemo
+                ? "Showing about five weeks of example history. Your real data is untouched and comes back when you turn this off."
+                : "Opens a separate copy of the app filled with about five weeks of example history, for demos and filming. Your real data isn't changed.")
+        }
+    }
+    #endif
 
     // MARK: - Profile
 

@@ -54,19 +54,19 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		AA00000000000000000000FA /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Services/RestTimerActivity.swift,
-			);
-			target = BF0639BF3027AA7500419DE2 /* CadenceWidgetsExtension */;
-		};
 		AA00000000000000000000C7 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
 			target = AA0000000000000000000010 /* Cadence */;
+		};
+		AA00000000000000000000FA /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Services/RestTimerActivity.swift,
+			);
+			target = BF0639BF3027AA7500419DE2 /* CadenceWidgetsExtension */;
 		};
 		BF0639D93027AA7900419DE2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -537,13 +537,13 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = CadenceWidgets/CadenceWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39J3QC9WD4;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = CadenceWidgets/CadenceWidgets.entitlements;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CadenceWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cadence;
@@ -584,13 +584,13 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = CadenceWidgets/CadenceWidgets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39J3QC9WD4;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				CODE_SIGN_ENTITLEMENTS = CadenceWidgets/CadenceWidgets.entitlements;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CadenceWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Cadence;

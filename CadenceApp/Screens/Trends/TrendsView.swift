@@ -95,6 +95,7 @@ struct TrendsView: View {
             }
             .chartYScale(domain: readinessDomain)
             .chartXAxis { cadenceDayAxis() }
+                .chartXScale(range: .plotDimension(endPadding: 16))
             .chartOverlay { proxy in
                 GeometryReader { geo in
                     Rectangle().fill(.clear).contentShape(Rectangle())
@@ -244,6 +245,7 @@ struct TrendsView: View {
                 .chartYScale(domain: 0...100)
                 .chartYAxis(.hidden)
                 .chartXAxis { cadenceDayAxis() }
+                .chartXScale(range: .plotDimension(endPadding: 16))
                 .frame(height: 150)
                 .accessibilityLabel("Training volume bars against the readiness line, last 30 days")
             }
@@ -378,6 +380,7 @@ private struct SignalTrendCard: View {
                 }
                 .chartYScale(domain: autoRange)
                 .chartXAxis { cadenceDayAxis() }
+                .chartXScale(range: .plotDimension(endPadding: 16))
                 .frame(height: 130)
                 .accessibilityLabel("\(title), 30 day trend")
             }

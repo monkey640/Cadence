@@ -76,7 +76,7 @@ struct TodayView: View {
         }
         // Pull-to-refresh is a *true* recompute (re-query HealthKit + rebuild),
         // not just a re-render — so late-synced wearable data flows in.
-        .refreshable { await recompute() }
+        .refreshable { if DemoMode.isOn { await reload() } else { await recompute() } }
         // Coming back to the foreground, silently recompute if the snapshot has
         // gone stale (data may have synced while we were away).
         .onChange(of: scenePhase) { _, phase in
@@ -121,7 +121,9 @@ struct TodayView: View {
 
     /// Recompute on foreground only if today's snapshot has gone stale.
     private func recomputeIfStale() async {
-        guard case .ready(let readout) = model.state, let snapshot = readout.snapshot else { return }
+        // Demo mode holds the seeded day still — no HealthKit recompute.
+        guard !DemoMode.isOn,
+              case .ready(let readout) = model.state, let snapshot = readout.snapshot else { return }
         let age = Date.now.timeIntervalSince(snapshot.updatedAt ?? .distantPast)
         if age > TodayViewModel.recomputeStaleness { await recompute() }
     }
