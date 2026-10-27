@@ -31,7 +31,8 @@ Bundle id `net.adnanahmad.Cadence` · v1.0 (1) · deployment target iOS 18.0.
 - **Never mark an item done without visual proof or a passing check you have read.**
   A missing shared scheme once made `xcodebuild test` print TEST SUCCEEDED while
   running zero tests.
-- The user has declined version control for this project. Don't suggest git.
+- The project is a git repo (`main`). Commit when asked; never push or create a
+  remote repository without the user's explicit go-ahead.
 
 ## Layout
 
@@ -70,8 +71,10 @@ cd Packages/CadenceCore && swift test
 
 Screenshots and demo states use `#if DEBUG` env hooks, passed through simctl with the
 `SIMCTL_CHILD_` prefix: `CADENCE_DEMO=1` plus `_TAB`, `_VERDICT` (push|hold|backOff),
-`_PLAYER` (1|rest), `_MEET=<days>`, `_RECAP`, `_NOCHECKIN`, `_BASELINING`, `_PLANDONE`,
-`_WEEKLY`, `_BULK`. The seed persists in the store, so **uninstall between shots** or a
+`_PLAYER` (1|rest), `_MEET=<days>`, `_RECAP`, `_SUMMARY` (with `_RECAP`: opens the PR
+summary with its celebration), `_NOCHECKIN`, `_BASELINING`, `_PLANDONE`, `_WEEKLY`,
+`_BULK`. The simulator refuses a pre-granted notification permission, so player shots
+show the permission dialog on a fresh install — tap Allow before capturing. The seed persists in the store, so **uninstall between shots** or a
 stale verdict carries over, and allow ~13s for the first render.
 
 ## Readiness engine
@@ -94,6 +97,21 @@ Weights: HRV 0.35, sleep 0.15, sleep quality 0.15, RHR 0.12, respiratory 0.08, l
 0.08, wrist temp 0.07 (these seven sum to 1.00) — plus wellness 0.30, CMJ 0.12,
 finger-tap 0.06, which are DRAFT and deliberately break the sum.
 
+## One number everywhere
+
+Today's hero, the post-check-in reveal and the Home Screen widget all lead with the
+same figure: **today's volume as % of plan** (`effectiveMultiplier × 100`), with the
+readiness score as secondary context. Keep them in step — showing "readiness 88" in
+one place and "100%" in another was a real bug. `WidgetBridge.publish` takes the
+multiplier for this reason.
+
+Colour carries state on the rest timer: amber while resting (in app, Lock Screen,
+Dynamic Island), the session's verdict colour only once it's time to go.
+
+`RestParser` reads compound plan notes like `"30s / 2-3 min"` as the *between-reps*
+rest (the first segment). It once averaged every number, giving 16.5-minute rests
+between tempo reps; `RestParserTests` walks every rest note in `plans.json`.
+
 ## Living readiness
 
 Wearables sync late (a Garmin uploading at noon left the morning score stale all day).
@@ -105,7 +123,7 @@ freezes the verdict so the plan can't shift under an athlete mid-workout.
 
 ## Current state
 
-Code and assets are complete. 98 tests pass (93 core + 5 app). Builds clean in
+Code and assets are complete. 104 tests pass (93 core + 11 app). Builds clean in
 **Release** with zero warnings. Verified on a physical device: install, widget on the
 home screen, app icon in all appearances.
 
@@ -119,7 +137,9 @@ options from `plans.json` at runtime via `PlanLibraryLoader.plannedEvents`, so H
 and Relay are hidden until real templates land — and appear automatically when they do.
 Existing profiles on those events keep their selection via `selectableEvents(including:)`.
 
-Never observed on real data: the rest-timer Live Activity, and the late-sync recompute.
+The rest-timer Live Activity and rest-end notification are verified on the simulator
+(Dynamic Island, Lock Screen, alert at zero). Still never observed on real data: the
+late-sync recompute.
 Baselines need 7+ days of real use.
 
 Remaining work is all owner-side: paid Apple Developer account, a hosted privacy policy
