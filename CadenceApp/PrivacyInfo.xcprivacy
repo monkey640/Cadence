@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Cadence does no tracking and collects nothing. Readiness is computed
+	     on device from Apple Health and stored in a local SwiftData store;
+	     nothing is uploaded, and there is no analytics or ad SDK. This must
+	     stay consistent with PRIVACY.md and the App Store privacy answers. -->
+	<key>NSPrivacyTracking</key>
+	<false/>
+	<key>NSPrivacyTrackingDomains</key>
+	<array/>
+	<key>NSPrivacyCollectedDataTypes</key>
+	<array/>
+	<key>NSPrivacyAccessedAPITypes</key>
+	<array>
+		<dict>
+			<!-- Readiness snapshots, the one-shot reveal day, the check-in
+			     streak and the widget bridge live in UserDefaults / the shared
+			     app group. CA92.1 = read and write access to information
+			     stored only by this app and its app group. -->
+			<key>NSPrivacyAccessedAPIType</key>
+			<string>NSPrivacyAccessedAPICategoryUserDefaults</string>
+			<key>NSPrivacyAccessedAPITypeReasons</key>
+			<array>
+				<string>CA92.1</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

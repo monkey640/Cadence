@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "purpose": "Movement description library for Cadence. Each sprint movement in the training plans maps to an entry here so the app can show the athlete exactly what to do and how to do it well — no guessing. Two tiers: 'short' shows by default (what it is + the one key cue); 'full' is revealed on tap (how to execute, what good feels like, common mistakes).",
+    "scope_and_safety": "These describe HOW to perform standard, widely-taught sprint movements. They do NOT prescribe volume, intensity progression, or load — that lives in the vetted plans. Describing a drill is informational; it is not the injury-risk surface and is safe to ship. Strength descriptions deliberately defer specifics to an S&C coach. Still presented under the app's coach-review-draft framing.",
+    "tone": "Written for a 14-18 year old athlete. Plain, direct, confident."
+  },
+  "movements": [
+    {
+      "movement_id": "acceleration",
+      "name": "Accelerations",
+      "develops": "Acceleration — getting up to speed quickly off the start.",
+      "short": "Drive out from a 3-point or block start and build speed gradually over the distance. Maximal effort, but let speed rise smoothly — don't pop straight up.",
+      "full": {
+        "how_to_do_it": "Start from a 3-point stance (one hand down) or blocks. Push hard into the ground and lean forward as you drive out. Your body rises gradually over the first several steps — like an airplane taking off, not a jump. Keep driving until you've covered the full distance, then ease off; don't slam the brakes.",
+        "what_good_feels_like": "Powerful and progressive. Each step covers more ground than the last. You feel like you're pushing the track behind you, staying low early and rising naturally.",
+        "common_mistakes": ["Standing up too early instead of staying forward through the drive", "Over-striding to reach — let the speed build, don't force long steps", "Tensing the shoulders and face; stay relaxed even at max effort"],
+        "key_cue": "Push the ground back, rise gradually, stay relaxed."
+      }
+    },
+    {
+      "movement_id": "max_velocity",
+      "name": "Flying runs (maximum velocity)",
+      "develops": "Top-end speed — the highest velocity you can reach and hold.",
+      "short": "A gradual build-up zone leading into a maximal-speed zone. You reach full speed before the timed/fast section and try to hold relaxed top speed through it.",
+      "full": {
+        "how_to_do_it": "Use a run-in (commonly ~20-30m) to smoothly accelerate to near-top speed, then hit the fast zone (e.g. 20-30m) at maximal velocity. The point is to train top speed without the fatigue of accelerating from a dead stop. Run the fast zone as fast as you can while staying relaxed — fast hands, tall posture, quick ground contacts.",
+        "what_good_feels_like": "Fast but smooth and almost effortless at the top — 'relaxed speed.' Your feet feel like they're barely touching the ground, contacts are quick and light, and you're tall and balanced.",
+        "common_mistakes": ["Tensing up to try to go faster — tension slows you down; relax the jaw and hands", "Reaching with the legs instead of letting them cycle quickly under you", "Not reaching full speed before the fast zone, so you're still accelerating instead of at true top speed"],
+        "key_cue": "Build in, then relaxed maximal speed — tall, quick, loose."
+      }
+    },
+    {
+      "movement_id": "speed_endurance",
+      "name": "Speed endurance",
+      "develops": "Holding near-top speed as fatigue sets in (roughly 60-150m efforts).",
+      "short": "Run at ~95-100% over a longer distance and focus on holding your top-speed mechanics as you tire. Full recovery between reps so each one is high quality.",
+      "full": {
+        "how_to_do_it": "Accelerate to high speed and then maintain it for the full distance, fighting to keep your form together as fatigue builds late in the rep. Take long, full recoveries between reps — these are quality runs, not conditioning. If your mechanics fall apart (form breaking down, slowing badly), stop the set; junk reps build bad habits and raise injury risk.",
+        "what_good_feels_like": "Fast and controlled. The end of the rep is hard, but your form holds — arms still driving, posture tall — rather than collapsing into a labored shuffle.",
+        "common_mistakes": ["Cutting recovery short, turning a speed session into a tired-jog session", "Pushing through reps after form has clearly broken down", "Starting too fast and dying — aim for even, fast, controlled"],
+        "key_cue": "Hold your speed and your form deep into the rep; full recovery."
+      }
+    },
+    {
+      "movement_id": "special_endurance_1",
+      "name": "Special endurance I",
+      "develops": "Maintaining speed under heavier fatigue (roughly 150-300m) — race-relevant for the 200/400.",
+      "short": "Run a longer rep at ~90-93%, even-paced, staying relaxed as fatigue builds. Long, near-full recoveries. This trains race-pace rhythm and the ability to stay smooth when tired.",
+      "full": {
+        "how_to_do_it": "Run at a strong, controlled effort (not all-out) over the distance, aiming for even pacing rather than a fast start and a big slow-down. The skill is staying relaxed and mechanically sound while fatigued. Recoveries are long (often 8-15 min) so you can repeat with quality.",
+        "what_good_feels_like": "Smooth, rhythmic, and 'in control' even as it gets hard. You finish tired but not destroyed, having held a consistent pace.",
+        "common_mistakes": ["Going out too hard and fading dramatically — pace it evenly", "Tensing up when fatigue hits instead of staying relaxed", "Rushing the recovery and losing rep quality"],
+        "key_cue": "Even pace, relaxed under fatigue — control, not all-out."
+      }
+    },
+    {
+      "movement_id": "special_endurance_2",
+      "name": "Special endurance II",
+      "develops": "The ability to hold speed through the final stretch of a 400 (roughly 300-500m or broken runs) — training the '300m wall.'",
+      "short": "Long, demanding reps at ~90-93% (sometimes broken into segments) to train holding speed when deeply fatigued. Full recoveries. This is the hardest, highest-fatigue work — quality and recovery matter most here.",
+      "full": {
+        "how_to_do_it": "Run a long rep — at or beyond race distance, sometimes broken into segments with short rest — at a strong, controlled effort, focusing on the back portion where fatigue is heaviest. The goal is teaching your body and mind to hold form and speed through the part of the 400 where most people fall apart. Recoveries are long/full because these are very taxing.",
+        "what_good_feels_like": "Brutally honest but controlled. The last stretch is where the work is — you're fighting to keep turnover and posture rather than slowing into a struggle.",
+        "common_mistakes": ["Treating it as all-out from the gun — you'll die before the part that matters", "Letting form collapse in the final segment instead of fighting to hold it", "Doing too many reps; this work is potent in small, well-recovered doses"],
+        "key_cue": "Stay strong and relaxed through the final stretch; this is the wall you're training."
+      }
+    },
+    {
+      "movement_id": "extensive_tempo",
+      "name": "Extensive tempo",
+      "develops": "Aerobic base and active recovery — supports training without high nervous-system cost.",
+      "short": "Easy runs at under ~70% effort, relaxed, often on grass, with short rests. This is recovery and base work — it should feel comfortable, never hard.",
+      "full": {
+        "how_to_do_it": "Run a series of relaxed runs (commonly 100m) at well under maximal effort with short walks or jogs between. Keep good, easy form. The purpose is blood flow, recovery, and aerobic support — not speed. If you're straining, you're going too fast.",
+        "what_good_feels_like": "Comfortable and rhythmic. You could hold a conversation. You finish feeling looser and refreshed, not fatigued.",
+        "common_mistakes": ["Running it too fast and turning a recovery day into a hard day — this defeats the high/low structure", "Sloppy form just because it's easy — keep it clean", "Skipping it as 'junk' — it's what lets your hard days stay hard"],
+        "key_cue": "Easy, relaxed, sub-70% — recovery, not effort."
+      }
+    },
+    {
+      "movement_id": "warmup_drills",
+      "name": "Dynamic warm-up + drills",
+      "develops": "Preparation — readies the body for sprinting and reinforces good mechanics.",
+      "short": "A dynamic warm-up (mobility, A/B skips, wall drives, build-ups) before the main work. Raises body temperature and grooves sprint mechanics. Never skipped — it's part of the session.",
+      "full": {
+        "how_to_do_it": "Move through mobility work, dynamic drills (A-skips, B-skips, high knees, wall drives), and a few progressive build-up runs to prepare for maximal effort. The warm-up rises in intensity gradually so you hit the main work fully primed. Drills aren't filler — they reinforce the positions you want at speed.",
+        "what_good_feels_like": "Progressively warmer, looser, and more 'springy.' By the end you feel ready to run fast, not tired from the warm-up.",
+        "common_mistakes": ["Rushing or skipping it — cold sprinting is a top cause of hamstring injury", "Going too hard in the warm-up and arriving at the main work already fatigued", "Doing drills sloppily; quality positions in drills carry over to sprinting"],
+        "key_cue": "Build gradually, move well, arrive primed — never skip it."
+      }
+    },
+    {
+      "movement_id": "strength",
+      "name": "Strength",
+      "develops": "Force production and resilience that support faster, more durable sprinting.",
+      "short": "Supervised strength work that complements your sprinting. Specific exercises and loads should come from your strength coach — Cadence does not prescribe lifting loads.",
+      "full": {
+        "how_to_do_it": "Follow a strength program set by a qualified strength & conditioning coach, performed with good technique under appropriate supervision. Strength supports sprint performance and injury resilience, but loading for developing athletes must be individualized by a professional — that's why Cadence intentionally leaves the specifics to your coach rather than prescribing them.",
+        "what_good_feels_like": "Challenging with sound technique. You should never sacrifice form to add weight, especially as a developing athlete.",
+        "common_mistakes": ["Chasing heavy loads without technique or supervision", "Treating strength as separate from sprinting rather than support for it", "Lifting to exhaustion on days meant to support speed work"],
+        "key_cue": "Quality technique, supervised, loads set by your S&C coach."
+      }
+    },
+    {
+      "movement_id": "block_starts",
+      "name": "Block starts",
+      "develops": "The start and early acceleration out of the blocks for race execution.",
+      "short": "Practice driving out of the blocks with race intent. Set up consistently, react and drive, and accelerate gradually like in your accelerations. Full recovery between reps.",
+      "full": {
+        "how_to_do_it": "Set your blocks consistently each time. From 'set,' drive out powerfully and stay forward through the first steps, rising gradually into acceleration. Treat each start with race focus rather than just going through the motions. Full recovery between reps keeps them sharp.",
+        "what_good_feels_like": "Explosive and forward. You feel driven out low and long, not popping upright, with each early step powerful and controlled.",
+        "common_mistakes": ["Standing up immediately out of the blocks instead of staying forward", "Inconsistent block setup, so every start feels different", "False-stepping or losing balance at 'go' — drive straight out"],
+        "key_cue": "Consistent setup, powerful forward drive, rise gradually."
+      }
+    }
+  ]
+}

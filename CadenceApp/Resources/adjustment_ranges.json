@@ -1,0 +1,143 @@
+{
+  "_meta": {
+    "status": "COACH_REVIEW_DRAFT",
+    "requires_coach_signoff_before_shipping": true,
+    "purpose": "Defines the BOUNDED envelope within which Cadence may personalize a hand-authored plan over time, plus conservative rules for detecting a quality 'deficiency'. The app never authors training or invents sessions; it only nudges emphasis within coach-approved ranges, and only after a real multi-session pattern is observed and confirmed.",
+    "phase": "PHASE TWO. Do not build until the core deterministic plan + readiness engine is shipped and real users are generating session logs to test detection against. Detection cannot be validated without real data.",
+    "core_design_principles": {
+      "vetted_floor": "Every adjustment stays inside ranges a coach pre-approved per template. The app selects within an envelope; it does not generate.",
+      "asymmetry": "REDUCING hard volume is the safe, default, low-evidence response. ADDING hard volume requires more evidence, smaller steps, and gradual ramping. When uncertain, the app reduces or holds — never adds. This matches the anti-overtraining thesis.",
+      "bounded_total": "Adjustments are TRADES within a fixed weekly high-CNS budget, not additions on top. To add emphasis in one quality, another is reduced. Total neural load stays capped.",
+      "speed_floor": "Maximum-velocity work has a hard weekly minimum that no deficiency response may drop below. The classic 400m mistake is stripping speed to add endurance; this prevents it.",
+      "transparency": "No silent plan changes. The app shows the observed pattern in plain language and requires user (and ideally coach) confirmation before altering the plan.",
+      "confounder_exclusion": "Sessions flagged low-readiness, or single outlier days, are excluded from deficiency detection so the app doesn't mistake a bad day or under-recovery for a true weakness."
+    },
+    "coach_review_checklist": [
+      "Are the detection thresholds (how much fade, over how many sessions) defensible, or too trigger-happy?",
+      "Are the min/max rep bands age-appropriate and is the max a true ceiling?",
+      "Is the weekly high-CNS session cap right for the target athlete?",
+      "Is the max-velocity weekly floor correct (so speed is never sacrificed)?",
+      "Is the 'add' ramp slow enough? (Drafted at <=1 rep/week.)",
+      "Should any deficiency response be removed entirely as too risky to automate?"
+    ]
+  },
+
+  "global_adjustment_rules": {
+    "weekly_high_cns_session_cap": 3,
+    "max_velocity_weekly_floor_sessions": 1,
+    "evidence_to_REDUCE": {
+      "min_sessions_observed": 1,
+      "note": "Reducing is always safe. Chronic low readiness, repeated incomplete sessions, or a single clearly over-fatigued week can trigger a reduction immediately."
+    },
+    "evidence_to_ADD": {
+      "min_sessions_observed": 4,
+      "min_pattern_consistency": "pattern present in at least 3 of the last 4 qualifying sessions",
+      "exclude_sessions": ["flagged low-readiness", "single statistical outliers", "sessions the user marked as illness/external stress"],
+      "max_change_per_week_reps": 1,
+      "ramp": "Introduce added volume gradually over 2-3 weeks, re-checking readiness trend each week; abort the add if readiness baseline trends down.",
+      "blackout": "Never add hard volume during the Competition/Taper phase, or in any week where the readiness baseline is declining."
+    },
+    "confirmation_required_before_any_change": true,
+    "never": [
+      "invent new session types or distances outside the template bands",
+      "exceed the weekly high-CNS session cap",
+      "drop max-velocity below its weekly floor",
+      "add hard volume off a single session or off low-readiness data",
+      "change the plan without showing the user the reason"
+    ]
+  },
+
+  "event_adjustment_profiles": [
+    {
+      "event": "100m",
+      "weekly_high_cns_budget_sessions": 3,
+      "adjustable_qualities": [
+        {"quality": "acceleration", "default_weekly_reps": 5, "min_weekly_reps": 4, "max_weekly_reps": 7, "distance_band_m": [10, 40], "phases": ["all"]},
+        {"quality": "max_velocity", "default_weekly_reps": 4, "min_weekly_reps": 3, "max_weekly_reps": 6, "distance_band_m": [20, 30], "phases": ["Specific Preparation", "Pre-Competition", "Competition / Taper"], "is_speed_floor_quality": true},
+        {"quality": "speed_endurance", "default_weekly_reps": 3, "min_weekly_reps": 2, "max_weekly_reps": 4, "distance_band_m": [60, 120], "phases": ["Specific Preparation", "Pre-Competition"]}
+      ],
+      "deficiencies": [
+        {
+          "name": "late_race_deceleration",
+          "plain_language": "Times/effort drop noticeably in the final ~20-30m of reps near race distance",
+          "detection_signals": ["measured or RPE-based slowdown in the last third of speed-endurance reps across qualifying sessions"],
+          "bounded_response": {"increase": {"quality": "speed_endurance", "by_reps": 1, "up_to_max": 4}, "offset": {"reduce_quality": "acceleration", "by_reps": 1, "not_below_min": true}, "evidence": "ADD rules"}
+        },
+        {
+          "name": "weak_top_speed",
+          "plain_language": "Top-speed (flying) performance lags relative to acceleration ability",
+          "detection_signals": ["max-velocity fly times stagnant while accel is strong, across qualifying sessions"],
+          "bounded_response": {"increase": {"quality": "max_velocity", "by_reps": 1, "up_to_max": 6}, "offset": {"reduce_quality": "speed_endurance", "by_reps": 1, "not_below_min": true}, "evidence": "ADD rules"}
+        },
+        {
+          "name": "chronic_underrecovery",
+          "plain_language": "Readiness baseline trending down or repeated incomplete high-CNS sessions",
+          "detection_signals": ["declining readiness baseline", "repeated failure to complete prescribed reps"],
+          "bounded_response": {"reduce": {"quality": "any_high_cns", "by": "drop one high-CNS session to low/tempo, or trim 1-2 reps from the hardest quality"}, "evidence": "REDUCE rules", "note": "Default protective response. Confident and fast."}
+        }
+      ]
+    },
+
+    {
+      "event": "200m",
+      "weekly_high_cns_budget_sessions": 3,
+      "adjustable_qualities": [
+        {"quality": "acceleration", "default_weekly_reps": 5, "min_weekly_reps": 4, "max_weekly_reps": 6, "distance_band_m": [20, 40], "phases": ["all"]},
+        {"quality": "max_velocity", "default_weekly_reps": 4, "min_weekly_reps": 3, "max_weekly_reps": 5, "distance_band_m": [20, 30], "phases": ["Specific Preparation", "Pre-Competition", "Competition / Taper"], "is_speed_floor_quality": true},
+        {"quality": "speed_endurance", "default_weekly_reps": 3, "min_weekly_reps": 2, "max_weekly_reps": 4, "distance_band_m": [80, 120], "phases": ["Specific Preparation", "Pre-Competition"]},
+        {"quality": "special_endurance_1", "default_weekly_reps": 2, "min_weekly_reps": 1, "max_weekly_reps": 3, "distance_band_m": [150, 200], "phases": ["Specific Preparation", "Pre-Competition"]}
+      ],
+      "deficiencies": [
+        {
+          "name": "speed_endurance_deficiency",
+          "plain_language": "Holds top speed only briefly; fades through the second half of 100-150m efforts",
+          "detection_signals": ["progressive slowdown across the back half of speed-endurance/SE1 reps over qualifying sessions"],
+          "bounded_response": {"increase": {"quality": "special_endurance_1", "by_reps": 1, "up_to_max": 3}, "offset": {"reduce_quality": "acceleration", "by_reps": 1, "not_below_min": true}, "evidence": "ADD rules"}
+        },
+        {
+          "name": "weak_top_speed",
+          "plain_language": "Top speed lags; the 200 is paced rather than sprinted",
+          "detection_signals": ["max-velocity stagnant relative to endurance qualities"],
+          "bounded_response": {"increase": {"quality": "max_velocity", "by_reps": 1, "up_to_max": 5}, "offset": {"reduce_quality": "special_endurance_1", "by_reps": 1, "not_below_min": true}, "evidence": "ADD rules"}
+        },
+        {
+          "name": "chronic_underrecovery",
+          "plain_language": "Readiness baseline trending down or repeated incomplete high-CNS sessions",
+          "detection_signals": ["declining readiness baseline", "repeated failure to complete prescribed reps"],
+          "bounded_response": {"reduce": {"quality": "any_high_cns", "by": "drop one high-CNS session to tempo, or trim reps from the hardest quality"}, "evidence": "REDUCE rules", "note": "Default protective response."}
+        }
+      ]
+    },
+
+    {
+      "event": "400m",
+      "weekly_high_cns_budget_sessions": 3,
+      "adjustable_qualities": [
+        {"quality": "max_velocity", "default_weekly_reps": 3, "min_weekly_reps": 2, "max_weekly_reps": 4, "distance_band_m": [20, 30], "phases": ["Specific Preparation", "Pre-Competition", "Competition / Taper"], "is_speed_floor_quality": true},
+        {"quality": "speed_endurance", "default_weekly_reps": 3, "min_weekly_reps": 2, "max_weekly_reps": 4, "distance_band_m": [100, 150], "phases": ["Specific Preparation", "Pre-Competition"]},
+        {"quality": "special_endurance_1", "default_weekly_reps": 2, "min_weekly_reps": 1, "max_weekly_reps": 3, "distance_band_m": [150, 250], "phases": ["Specific Preparation", "Pre-Competition"]},
+        {"quality": "special_endurance_2", "default_weekly_reps": 2, "min_weekly_reps": 1, "max_weekly_reps": 3, "distance_band_m": [300, 500], "phases": ["Pre-Competition"]}
+      ],
+      "deficiencies": [
+        {
+          "name": "speed_endurance_deficiency",
+          "plain_language": "The '300m wall' — large fade in the final ~100m; back-half splits decay sharply relative to front half",
+          "detection_signals": ["consistent large positive split / final-segment slowdown in SE1 and SE2 reps over qualifying sessions", "self-reported 'dying late' corroborated by logged splits"],
+          "bounded_response": {"increase": {"quality": "special_endurance_2", "by_reps": 1, "up_to_max": 3}, "offset": {"reduce_quality": "speed_endurance", "by_reps": 1, "not_below_min": true}, "evidence": "ADD rules", "caution": "This is the highest-load adjustment in the whole system. Ramp slowest here; SE2 is the most fatiguing and injury-relevant work. Coach calibration of the split-decay threshold is essential."}
+        },
+        {
+          "name": "weak_top_speed",
+          "plain_language": "Low top-end speed means race pace is too close to max — no speed reserve",
+          "detection_signals": ["max-velocity stagnant or low relative to event level; 100m/200m benchmarks weak vs 400 performance"],
+          "bounded_response": {"increase": {"quality": "max_velocity", "by_reps": 1, "up_to_max": 4}, "offset": {"reduce_quality": "special_endurance_1", "by_reps": 1, "not_below_min": true}, "evidence": "ADD rules"}
+        },
+        {
+          "name": "chronic_underrecovery",
+          "plain_language": "Readiness baseline trending down or repeated incomplete high-CNS sessions (most likely in the demanding Pre-Comp phase)",
+          "detection_signals": ["declining readiness baseline over 7-10 days", "repeated failure to complete prescribed special-endurance reps"],
+          "bounded_response": {"reduce": {"quality": "special_endurance_2_first", "by": "trim SE2 to its minimum and/or convert a high-CNS day to extensive tempo"}, "evidence": "REDUCE rules", "note": "Default protective response, and the most important one for the 400 because Pre-Comp load is heavy. Reduce SE2 first since it carries the highest fatigue cost."}
+        }
+      ]
+    }
+  ]
+}

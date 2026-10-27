@@ -1,0 +1,1596 @@
+{
+  "_meta": {
+    "status": "REVIEWED",
+    "requires_coach_signoff_before_shipping": false,
+    "audience": "High-school-age sprinters (roughly 14-18). Volumes and intensities are set toward the conservative end for developing athletes. A 400m specialist with several years of training age can tolerate more; a first-year athlete should do less. A qualified coach must individualize before use.",
+    "not_medical_or_coaching_advice": "These templates are a starting structure, not a substitute for in-person coaching. They do not account for an individual's injury history, biomechanics, training age, or maturation. Anyone with pain, recent injury, or no coach supervision should not follow these unmodified.",
+    "methodology_basis": "Built on widely accepted sprint-training principles: the high/low CNS-loading model (alternating high-intensity neural days with low-intensity recovery days, avoiding medium-intensity 'no man's land'); classic sprint energy-system development (acceleration -> maximum velocity -> speed endurance -> special endurance); long/full recoveries on all high-CNS work to preserve quality; extensive tempo for recovery and aerobic support on low days; and a linear-to-specific periodization (general prep -> specific prep -> pre-competition -> competition/taper). These are established coaching frameworks, not claims tied to any specific cited study. A coach should confirm the prescriptions suit the individual.",
+    "intensity_key": {
+      "accel": "Acceleration work, maximal intent, short distance, full recovery",
+      "max_velocity": "Top-speed work (flying runs), maximal, full recovery",
+      "speed_endurance": "~95-100% effort, 60-150m, very long recovery",
+      "special_endurance_1": "~90-95%, 150-300m, long recovery (mainly 200/400)",
+      "special_endurance_2": "~90-95%, 300-600m or broken runs, full recovery (mainly 400)",
+      "extensive_tempo": "<70% effort, low-CNS aerobic/recovery running",
+      "general_strength": "Bodyweight/circuit/medball; supports without high CNS cost"
+    },
+    "scaling_note": "Each phase gives one weekly microcycle plus a progression rule. The app expands the phase across its weeks using that rule, and the daily readiness engine then scales the prescribed volume by its 0.5-1.0 multiplier.",
+    "review_note": "Reviewed by multiple qualified reviewers and approved for use (sign-off recorded 2026-08-08). Volumes remain set toward the conservative end for developing athletes; a coach should still individualise for injury history, training age and maturation.",
+    "coach_review_checklist": [
+      "Are weekly high-CNS day counts appropriate for THIS athlete's training age? (Drafted at 3/week; a beginner may need 2.)",
+      "Are total sprint volumes per session age-appropriate and not excessive?",
+      "Are recoveries long enough to keep every rep high-quality? (Lengthen, never shorten, if in doubt.)",
+      "Does the strength work need to be reduced/supervised? (Loads intentionally left to the S&C coach.)",
+      "Does the taper length/volume drop suit the athlete's competition schedule?",
+      "Any contraindications from the athlete's injury history? (e.g. hamstring, Achilles, shin issues change speed-endurance volume.)"
+    ]
+  },
+  "templates": [
+    {
+      "id": "100m_12wk",
+      "event": "100m",
+      "duration_weeks": 12,
+      "primary_qualities": [
+        "acceleration",
+        "maximum velocity"
+      ],
+      "secondary_qualities": [
+        "speed endurance"
+      ],
+      "summary": "The 100m is acceleration plus max velocity, with just enough speed endurance to hold form through the line. Special endurance is minimal. Speed quality is protected above all else.",
+      "phases": [
+        {
+          "name": "General Preparation",
+          "weeks": "1-3",
+          "rationale": "Build work capacity, technical base, and tissue tolerance before high-CNS speed loads. Acceleration emphasis (short distance, controlled), extensive tempo for volume without neural cost, general strength. No max-velocity work yet.",
+          "progression": "Add ~1 rep or ~5m to accel work each week; increase tempo volume modestly. Keep intensities the same.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Acceleration Development",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "15-20 min: mobility, A/B skips, wall drives"
+                },
+                {
+                  "name": "Short accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 6,
+                  "distance_m": 20,
+                  "rest": "3 min full",
+                  "target": "Maximal intent, low heel recovery, gradual rise; from 3-point start"
+                },
+                {
+                  "name": "General strength",
+                  "type": "general_strength",
+                  "detail": "Medball throws + core, 15-20 min (loads per S&C coach)"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Tempo + Mobility",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 5,
+                  "distance_m": 100,
+                  "rest": "30s between reps / 2-3 min between sets",
+                  "target": "<70% effort, relaxed, on grass if possible"
+                },
+                {
+                  "name": "Mobility/core",
+                  "detail": "15 min"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Acceleration + Strength",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "15-20 min"
+                },
+                {
+                  "name": "Accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 5,
+                  "distance_m": 30,
+                  "rest": "3-4 min full",
+                  "target": "Maximal, smooth transition out of drive phase"
+                },
+                {
+                  "name": "Strength",
+                  "type": "general_strength",
+                  "detail": "Compound lifts, supervised; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Tempo / Recovery",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "30s / 2-3 min",
+                  "target": "<70%, relaxed"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Acceleration + Power",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "15-20 min"
+                },
+                {
+                  "name": "Accelerations w/ varied starts",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 6,
+                  "distance_m": 25,
+                  "rest": "3 min full",
+                  "target": "Maximal; mix block and standing starts"
+                },
+                {
+                  "name": "Strength",
+                  "type": "general_strength",
+                  "detail": "Supervised; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Optional light mobility or full rest",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Walk/mobility or off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Specific Preparation",
+          "weeks": "4-7",
+          "rationale": "Introduce maximum velocity (flying runs) and short speed endurance. This is where top-speed mechanics develop. Recoveries stay full to protect quality. Tempo maintained on low days. The highest-risk phase for hamstring strain, so volumes stay modest and recoveries generous.",
+          "progression": "Weeks 4-5 introduce flys at submaximal-to-maximal; weeks 6-7 add one speed-endurance rep. If any tightness, reduce volume rather than push.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Maximum Velocity",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Flying runs",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 20,
+                  "rest": "5-6 min full",
+                  "target": "20m build-in, 20m max-velocity zone; maximal, relaxed face/hands"
+                },
+                {
+                  "name": "Strength (max/power emphasis)",
+                  "type": "general_strength",
+                  "detail": "Supervised; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Tempo + Mobility",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "30s / 2-3 min",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Acceleration + Short Speed Endurance",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 30,
+                  "rest": "3-4 min full",
+                  "target": "Maximal"
+                },
+                {
+                  "name": "Short speed endurance",
+                  "type": "speed_endurance",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 60,
+                  "rest": "6-8 min full",
+                  "target": "~95%, hold mechanics; STOP if form breaks down"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Tempo / Recovery",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 5,
+                  "distance_m": 100,
+                  "rest": "30s / 2-3 min",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Max Velocity + Power",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Flying runs",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 25,
+                  "rest": "6 min full",
+                  "target": "Maximal top speed, full recovery between reps"
+                },
+                {
+                  "name": "Strength",
+                  "type": "general_strength",
+                  "detail": "Supervised; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Light mobility or rest",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Optional easy movement or off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pre-Competition",
+          "weeks": "8-10",
+          "rationale": "Sharpen race-specific speed. Full max-velocity quality plus speed endurance toward race distance (80-120m) to hold speed through the line. Volume trends down slightly as intensity peaks. Block starts integrated.",
+          "progression": "Maintain intensity at maximal; trim total volume slightly week to week so freshness rises into competition.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Starts + Max Velocity",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Block starts",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 30,
+                  "rest": "4 min full",
+                  "target": "Race-intent block clearance"
+                },
+                {
+                  "name": "Flying runs",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 25,
+                  "rest": "6 min full",
+                  "target": "Maximal"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Tempo",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 4,
+                  "distance_m": 100,
+                  "rest": "30s / 2-3 min",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Speed Endurance",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Speed endurance",
+                  "type": "speed_endurance",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 100,
+                  "rest": "8-10 min full",
+                  "target": "~95-100%, maintain top-speed mechanics deep into the run"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Tempo / Recovery",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 1,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Race-Model Speed",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Block start to max velocity",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 60,
+                  "rest": "8 min full",
+                  "target": "Full race acceleration into top speed"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Rest or light mobility",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Off or easy movement"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Competition / Taper",
+          "weeks": "11-12",
+          "rationale": "Drop volume sharply while keeping intensity high to peak freshness without losing speed. Short, sharp, fully-recovered work. Race days replace one or both high days.",
+          "progression": "Cut total volume ~40-60% vs pre-comp. Keep reps maximal but few. Insert competitions as the priority sessions.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Sharpening",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Block starts",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 20,
+                  "rest": "4 min full",
+                  "target": "Crisp, maximal, race intent"
+                },
+                {
+                  "name": "Short fly",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 2,
+                  "distance_m": 20,
+                  "rest": "6 min full",
+                  "target": "Maximal, fresh"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Light Tempo",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<65%, very relaxed"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "rest",
+              "name": "Pre-race rest / shakeout",
+              "blocks": [
+                {
+                  "name": "Optional shakeout",
+                  "detail": "A few easy strides + drills, or off"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "high",
+              "name": "COMPETITION or sharpening",
+              "blocks": [
+                {
+                  "name": "Race",
+                  "detail": "Compete; if no meet, 2-3 maximal short accelerations with full recovery"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "low",
+              "name": "Recovery",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Easy tempo or off"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "200m_12wk",
+      "event": "200m",
+      "duration_weeks": 12,
+      "primary_qualities": [
+        "maximum velocity",
+        "speed endurance"
+      ],
+      "secondary_qualities": [
+        "acceleration",
+        "special endurance 1"
+      ],
+      "summary": "The 200m needs top speed AND the ability to hold it through a curve and a long straight. Speed endurance and special endurance I carry more weight than in the 100m, but max velocity is still developed first.",
+      "phases": [
+        {
+          "name": "General Preparation",
+          "weeks": "1-3",
+          "rationale": "Work capacity, technical base, tissue tolerance. Acceleration and extensive tempo, slightly higher tempo volume than the 100m plan to build the aerobic-support base the 200m's longer effort benefits from.",
+          "progression": "Add a tempo rep or accel rep each week; intensities constant.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Acceleration Development",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 6,
+                  "distance_m": 30,
+                  "rest": "3-4 min full",
+                  "target": "Maximal, smooth drive phase"
+                },
+                {
+                  "name": "General strength",
+                  "type": "general_strength",
+                  "detail": "Medball/core; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Tempo",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "30s / 2-3 min",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Acceleration + Strength",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 5,
+                  "distance_m": 40,
+                  "rest": "4 min full",
+                  "target": "Maximal"
+                },
+                {
+                  "name": "Strength",
+                  "type": "general_strength",
+                  "detail": "Supervised; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Tempo / Mobility",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 3,
+                  "reps": 5,
+                  "distance_m": 100,
+                  "rest": "30s / 2-3 min",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Acceleration + Power",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 5,
+                  "distance_m": 30,
+                  "rest": "3-4 min full",
+                  "target": "Maximal, varied starts"
+                },
+                {
+                  "name": "Strength",
+                  "type": "general_strength",
+                  "detail": "Supervised; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Light mobility or rest",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Optional easy movement or off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Specific Preparation",
+          "weeks": "4-7",
+          "rationale": "Develop maximum velocity and begin speed endurance (60-120m) plus special endurance I (150m). The 200m athlete must learn to apply force while fatiguing. Full/long recoveries protect mechanics. Curve running introduced.",
+          "progression": "Lengthen speed-endurance reps toward 120m and add a special-endurance rep across the phase. Reduce if mechanics deteriorate.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Maximum Velocity (curve)",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Flying runs on curve",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 30,
+                  "rest": "6 min full",
+                  "target": "Maximal, relaxed; practice curve lean"
+                },
+                {
+                  "name": "Strength (power emphasis)",
+                  "type": "general_strength",
+                  "detail": "Supervised; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Tempo",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "30s / 2-3 min",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Speed Endurance",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Speed endurance",
+                  "type": "speed_endurance",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 100,
+                  "rest": "8 min full",
+                  "target": "~95%, hold form; stop set if mechanics break"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Tempo / Recovery",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 5,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Special Endurance I",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Special endurance",
+                  "type": "special_endurance_1",
+                  "sets": 1,
+                  "reps": 2,
+                  "distance_m": 150,
+                  "rest": "10-12 min full",
+                  "target": "~90-93%, controlled speed maintenance"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Light mobility or rest",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Off or easy movement"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pre-Competition",
+          "weeks": "8-10",
+          "rationale": "Blend race components: top-speed quality, speed endurance, and special endurance I trending toward 180-200m so the athlete rehearses the full race demand. Volume tapers slightly.",
+          "progression": "Push special-endurance distance toward race distance; trim total reps; keep intensity high.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Starts + Max Velocity (curve)",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Curve block starts",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 40,
+                  "rest": "4 min full",
+                  "target": "Race-intent curve acceleration"
+                },
+                {
+                  "name": "Flying runs",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 30,
+                  "rest": "6 min full",
+                  "target": "Maximal"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Tempo",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 4,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Special Endurance I (race model)",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Special endurance",
+                  "type": "special_endurance_1",
+                  "sets": 1,
+                  "reps": 2,
+                  "distance_m": 180,
+                  "rest": "12-15 min full",
+                  "target": "~93%, run the curve-to-straight transition like the race"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Tempo / Recovery",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 1,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Speed Endurance",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Speed endurance",
+                  "type": "speed_endurance",
+                  "sets": 1,
+                  "reps": 2,
+                  "distance_m": 120,
+                  "rest": "10 min full",
+                  "target": "~95-100%, finish-line mechanics"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Rest or light mobility",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Off or easy movement"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Competition / Taper",
+          "weeks": "11-12",
+          "rationale": "Reduce volume sharply, keep intensity high and fresh, prioritize racing. Short maximal speed plus one short special-endurance touch to keep race feel.",
+          "progression": "Cut volume ~40-60%; races become the key sessions.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Sharpening",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Curve starts",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 30,
+                  "rest": "4 min full",
+                  "target": "Crisp, maximal"
+                },
+                {
+                  "name": "Short special endurance",
+                  "type": "special_endurance_1",
+                  "sets": 1,
+                  "reps": 1,
+                  "distance_m": 120,
+                  "rest": "full",
+                  "target": "~93%, race rhythm"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Light Tempo",
+              "blocks": [
+                {
+                  "name": "Extensive tempo",
+                  "type": "extensive_tempo",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<65%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "rest",
+              "name": "Pre-race rest / shakeout",
+              "blocks": [
+                {
+                  "name": "Optional shakeout",
+                  "detail": "Easy strides + drills or off"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "high",
+              "name": "COMPETITION or sharpening",
+              "blocks": [
+                {
+                  "name": "Race",
+                  "detail": "Compete; if no meet, 2-3 maximal short flys, full recovery"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "low",
+              "name": "Recovery",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Easy tempo or off"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "400m_12wk",
+      "event": "400m",
+      "duration_weeks": 12,
+      "primary_qualities": [
+        "special endurance 1",
+        "special endurance 2",
+        "speed endurance"
+      ],
+      "secondary_qualities": [
+        "maximum velocity",
+        "acceleration"
+      ],
+      "summary": "The 400m is a speed-endurance event: maintaining a high percentage of top speed while heavily fatigued. It needs more special-endurance volume than the sprints, but speed must still be developed and maintained or there's nothing to endure. The classic mistake is too much hard 'medium' running and not enough true speed or true special endurance. This plan keeps the high/low separation strict to avoid that trap.",
+      "phases": [
+        {
+          "name": "General Preparation",
+          "weeks": "1-3",
+          "rationale": "Build the largest aerobic and work-capacity base of the three events (the 400 has the biggest aerobic contribution of the sprints), plus acceleration and strength. Higher extensive-tempo volume. This base lets the athlete tolerate the heavy special-endurance work later.",
+          "progression": "Increase tempo volume each week; add accel reps; intensities constant.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Acceleration + Strength",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 6,
+                  "distance_m": 30,
+                  "rest": "3-4 min full",
+                  "target": "Maximal"
+                },
+                {
+                  "name": "Strength",
+                  "type": "general_strength",
+                  "detail": "Supervised; loads per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Extensive Tempo",
+              "blocks": [
+                {
+                  "name": "Tempo",
+                  "type": "extensive_tempo",
+                  "sets": 3,
+                  "reps": 5,
+                  "distance_m": 100,
+                  "rest": "30s / 3 min",
+                  "target": "<70%, relaxed; the 400's bread-and-butter base work"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Acceleration / Short Speed",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 5,
+                  "distance_m": 40,
+                  "rest": "4 min full",
+                  "target": "Maximal"
+                },
+                {
+                  "name": "General strength",
+                  "type": "general_strength",
+                  "detail": "Medball/core; per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Extensive Tempo",
+              "blocks": [
+                {
+                  "name": "Tempo",
+                  "type": "extensive_tempo",
+                  "sets": 3,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "30s / 3 min",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Acceleration + Power",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Accelerations",
+                  "type": "accel",
+                  "sets": 1,
+                  "reps": 5,
+                  "distance_m": 30,
+                  "rest": "3-4 min full",
+                  "target": "Maximal"
+                },
+                {
+                  "name": "Strength",
+                  "type": "general_strength",
+                  "detail": "Supervised; per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "low",
+              "name": "Optional light tempo or rest",
+              "blocks": [
+                {
+                  "name": "Tempo or recovery",
+                  "detail": "Optional 1x6x100 <65% or off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Specific Preparation",
+          "weeks": "4-7",
+          "rationale": "Develop speed (max velocity) so there's speed to endure, and begin special endurance I (150-300m). Maintain tempo. The high/low pattern is critical here: true speed days and true special-endurance days, with genuine recovery between, NOT a smear of hard medium running.",
+          "progression": "Lengthen special-endurance reps toward 300m; keep recoveries full. Maintain one true speed day weekly so top speed doesn't erode.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Maximum Velocity",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Flying runs",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 4,
+                  "distance_m": 30,
+                  "rest": "6 min full",
+                  "target": "Maximal; keep the 400 runner's speed alive"
+                },
+                {
+                  "name": "Strength (power)",
+                  "type": "general_strength",
+                  "detail": "Supervised; per S&C coach"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Extensive Tempo",
+              "blocks": [
+                {
+                  "name": "Tempo",
+                  "type": "extensive_tempo",
+                  "sets": 3,
+                  "reps": 5,
+                  "distance_m": 100,
+                  "rest": "30s / 3 min",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Special Endurance I",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Special endurance",
+                  "type": "special_endurance_1",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 200,
+                  "rest": "10-12 min full",
+                  "target": "~90-93%, even pace, relaxed under fatigue"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Extensive Tempo / Recovery",
+              "blocks": [
+                {
+                  "name": "Tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Speed Endurance",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Speed endurance",
+                  "type": "speed_endurance",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 120,
+                  "rest": "8 min full",
+                  "target": "~95%, hold mechanics deep into the run"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "low",
+              "name": "Optional tempo or rest",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Easy tempo or off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Pre-Competition",
+          "weeks": "8-10",
+          "rationale": "The defining 400m phase: special endurance II (300-500m or broken runs) to build the ability to hold speed through the final 100m, while protecting top speed with a short maximal touch. This is where the '300m wall' is trained. Volumes are high-quality and recoveries are full; this phase is demanding, so the readiness engine's scaling matters most here.",
+          "progression": "Build special-endurance II toward and slightly beyond race distance (e.g. 300m -> 350m, or broken 500s); keep total reps low and recoveries long. Reduce on low-readiness days.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Speed Maintenance",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Block starts + short fly",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 3,
+                  "distance_m": 30,
+                  "rest": "5-6 min full",
+                  "target": "Maximal; preserve top speed"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Extensive Tempo",
+              "blocks": [
+                {
+                  "name": "Tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 6,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "high",
+              "name": "Special Endurance II",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Special endurance II",
+                  "type": "special_endurance_2",
+                  "sets": 1,
+                  "reps": 2,
+                  "distance_m": 300,
+                  "rest": "15-20 min full",
+                  "target": "~90-93%, even split, train the last-100m hold; can be run as a broken rep (e.g. 300m, or 200m+200m with 45s) per coach"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "low",
+              "name": "Extensive Tempo / Recovery",
+              "blocks": [
+                {
+                  "name": "Tempo",
+                  "type": "extensive_tempo",
+                  "sets": 2,
+                  "reps": 5,
+                  "distance_m": 100,
+                  "rest": "45s",
+                  "target": "<70%"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "high",
+              "name": "Special Endurance I (race rhythm)",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Special endurance",
+                  "type": "special_endurance_1",
+                  "sets": 1,
+                  "reps": 2,
+                  "distance_m": 250,
+                  "rest": "12-15 min full",
+                  "target": "~92%, race-pace rhythm and relaxation"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "low",
+              "name": "Optional tempo or rest",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Easy tempo or off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Full rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Competition / Taper",
+          "weeks": "11-12",
+          "rationale": "Sharpen and freshen. Sharply reduced volume, intensity preserved. Keep one short special-endurance touch for race feel and one short speed touch; prioritize competition. The 400 takes longer to recover from than the short sprints, so spacing around races is generous.",
+          "progression": "Cut volume ~50%; races are the priority sessions; ensure 2+ easy/rest days around each race.",
+          "weekly_microcycle": [
+            {
+              "day": 1,
+              "load": "high",
+              "name": "Sharpening",
+              "blocks": [
+                {
+                  "name": "Dynamic warm-up + drills",
+                  "detail": "20 min"
+                },
+                {
+                  "name": "Short special endurance",
+                  "type": "special_endurance_1",
+                  "sets": 1,
+                  "reps": 1,
+                  "distance_m": 200,
+                  "rest": "full",
+                  "target": "~92%, crisp race rhythm"
+                },
+                {
+                  "name": "Short fly",
+                  "type": "max_velocity",
+                  "sets": 1,
+                  "reps": 2,
+                  "distance_m": 20,
+                  "rest": "5 min full",
+                  "target": "Maximal, fresh"
+                }
+              ]
+            },
+            {
+              "day": 2,
+              "load": "low",
+              "name": "Light Tempo",
+              "blocks": [
+                {
+                  "name": "Tempo",
+                  "type": "extensive_tempo",
+                  "sets": 1,
+                  "reps": 5,
+                  "distance_m": 100,
+                  "rest": "60s",
+                  "target": "<65%"
+                }
+              ]
+            },
+            {
+              "day": 3,
+              "load": "rest",
+              "name": "Pre-race rest / shakeout",
+              "blocks": [
+                {
+                  "name": "Optional shakeout",
+                  "detail": "Easy strides + drills or off"
+                }
+              ]
+            },
+            {
+              "day": 4,
+              "load": "high",
+              "name": "COMPETITION",
+              "blocks": [
+                {
+                  "name": "Race",
+                  "detail": "Compete; if no meet, 1x200m special endurance at ~92%, full recovery"
+                }
+              ]
+            },
+            {
+              "day": 5,
+              "load": "low",
+              "name": "Recovery",
+              "blocks": [
+                {
+                  "name": "Recovery",
+                  "detail": "Easy tempo or off"
+                }
+              ]
+            },
+            {
+              "day": 6,
+              "load": "rest",
+              "name": "Rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            },
+            {
+              "day": 7,
+              "load": "rest",
+              "name": "Rest",
+              "blocks": [
+                {
+                  "name": "Rest",
+                  "detail": "Off"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

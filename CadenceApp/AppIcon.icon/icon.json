@@ -1,0 +1,152 @@
+{
+  "fill" : {
+    "linear-gradient" : [
+      "display-p3:0.93877,1.00000,0.92639,1.00000",
+      "extended-gray:1.00000,1.00000"
+    ],
+    "orientation" : {
+      "start" : {
+        "x" : 0.5,
+        "y" : 1
+      },
+      "stop" : {
+        "x" : 0.5,
+        "y" : 0
+      }
+    }
+  },
+  "groups" : [
+    {
+      "layers" : [
+        {
+          "blend-mode-specializations" : [
+            {
+              "value" : "hard-light"
+            },
+            {
+              "appearance" : "dark",
+              "value" : "normal"
+            }
+          ],
+          "fill-specializations" : [
+            {
+              "value" : "automatic"
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "solid" : "display-p3:0.90653,1.00000,0.89701,1.00000"
+              }
+            }
+          ],
+          "glass" : true,
+          "hidden" : false,
+          "image-name" : "heartbeat_17731131.png",
+          "name" : "heartbeat_17731131",
+          "opacity" : 1,
+          "position-specializations" : [
+            {
+              "value" : {
+                "scale" : 1.5,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
+            },
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 1.91,
+                "translation-in-points" : [
+                  0,
+                  0
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "blend-mode" : "darken",
+          "fill-specializations" : [
+            {
+              "value" : {
+                "linear-gradient" : [
+                  "display-p3:1.00000,0.80305,0.41138,1.00000",
+                  "display-p3:0.91312,0.04421,0.07254,1.00000"
+                ],
+                "orientation" : {
+                  "start" : {
+                    "x" : 0.9682639070182311,
+                    "y" : 1.0864607816595497
+                  },
+                  "stop" : {
+                    "x" : 0.14819445350911542,
+                    "y" : 0.23008818589025753
+                  }
+                }
+              }
+            },
+            {
+              "appearance" : "dark",
+              "value" : {
+                "linear-gradient" : [
+                  "display-p3:1.00000,0.80318,0.32716,1.00000",
+                  "display-p3:1.00000,0.00000,0.02329,1.00000"
+                ],
+                "orientation" : {
+                  "start" : {
+                    "x" : 0.05602374581212198,
+                    "y" : -0.022496400575907852
+                  },
+                  "stop" : {
+                    "x" : 0.5,
+                    "y" : 1
+                  }
+                }
+              }
+            }
+          ],
+          "glass" : false,
+          "image-name" : "Untitled design (1).png",
+          "name" : "Untitled design (1)",
+          "position-specializations" : [
+            {
+              "value" : {
+                "scale" : 0.47,
+                "translation-in-points" : [
+                  10.340000000000032,
+                  -42
+                ]
+              }
+            },
+            {
+              "idiom" : "square",
+              "value" : {
+                "scale" : 0.52,
+                "translation-in-points" : [
+                  8,
+                  -45.8515625
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : true,
+        "value" : 0.3
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}
